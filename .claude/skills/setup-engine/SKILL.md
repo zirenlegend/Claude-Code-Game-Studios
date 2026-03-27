@@ -41,17 +41,17 @@ If no engine is specified, run an interactive engine selection process:
 
 Use this decision matrix:
 
-| Factor | Godot 4 | Unity | Unreal Engine 5 |
-|--------|---------|-------|-----------------|
-| **Best for** | 2D games, small 3D, solo/small teams | Mobile, mid-scope 3D, cross-platform | AAA 3D, photorealism, large teams |
-| **Language** | GDScript (+ C#, C++ via extensions) | C# | C++ / Blueprint |
-| **Cost** | Free, MIT license | Free under revenue threshold | Free under revenue threshold, 5% royalty |
-| **Learning curve** | Gentle | Moderate | Steep |
-| **2D support** | Excellent (native) | Good (but 3D-first engine) | Possible but not ideal |
-| **3D quality ceiling** | Good (improving rapidly) | Very good | Best-in-class |
-| **Web export** | Yes (native) | Yes (limited) | No |
-| **Console export** | Via third-party | Yes (with license) | Yes |
-| **Open source** | Yes | No | Source available |
+| Factor | Godot 4 | Unity | Unreal Engine 5 | Cocos Creator 3.x |
+|--------|---------|-------|-----------------|-------------------|
+| **Best for** | 2D games, small 3D, solo/small teams | Mobile, mid-scope 3D, cross-platform | AAA 3D, photorealism, large teams | Mobile 2D, web games, cross-platform mobile |
+| **Language** | GDScript (+ C#, C++ via extensions) | C# | C++ / Blueprint | TypeScript |
+| **Cost** | Free, MIT license | Free under revenue threshold | Free under revenue threshold, 5% royalty | Free, MIT license |
+| **Learning curve** | Gentle | Moderate | Steep | Gentle to Moderate |
+| **2D support** | Excellent (native) | Good (but 3D-first engine) | Possible but not ideal | Excellent (2D-first) |
+| **3D quality ceiling** | Good (improving rapidly) | Very good | Best-in-class | Moderate |
+| **Web export** | Yes (native) | Yes (limited) | No | Yes (native) |
+| **Console export** | Via third-party | Yes (with license) | Yes | Limited (check current status) |
+| **Open source** | Yes | No | Source available | Yes |
 
 Present the top 1-2 recommendations with reasoning tied to the user's answers.
 Let the user choose — never force a recommendation.
@@ -98,6 +98,14 @@ Read `CLAUDE.md` and update the Technology Stack section. Replace the
 - **Asset Pipeline**: Unreal Content Pipeline
 ```
 
+**For Cocos Creator:**
+```markdown
+- **Engine**: Cocos Creator [version]
+- **Language**: TypeScript (primary), C++ via JSB (performance-critical)
+- **Build System**: Cocos Creator Build Pipeline
+- **Asset Pipeline**: Cocos Asset Manager + Asset Bundles
+```
+
 ---
 
 ## 5. Populate Technical Preferences
@@ -133,6 +141,14 @@ engine-appropriate defaults. Read the existing template first, then fill in:
 - Booleans: `b` prefix (e.g., `bIsAlive`)
 - Files: Match class without prefix (e.g., `PlayerController.h`)
 
+**For Cocos Creator (TypeScript):**
+- Classes: PascalCase (e.g., `PlayerController`)
+- Components: PascalCase with `@ccclass` (e.g., `PlayerController`)
+- Variables/methods: camelCase (e.g., `moveSpeed`, `takeDamage()`)
+- Private fields: _underscorePrefix (e.g., `_currentHealth`)
+- Constants: UPPER_SNAKE_CASE (e.g., `MAX_SPEED`)
+- Files: PascalCase matching class (e.g., `PlayerController.ts`)
+
 ### Remaining Sections
 - Performance Budgets: Leave as `[TO BE CONFIGURED]` with a suggestion:
   > "Typical targets: 60fps / 16.6ms frame budget. Want to set these now?"
@@ -157,6 +173,7 @@ Check whether the engine version is likely beyond the LLM's training data.
 - Godot: training data likely covers up to ~4.3
 - Unity: training data likely covers up to ~2023.x / early 6000.x
 - Unreal: training data likely covers up to ~5.3 / early 5.4
+- Cocos Creator: training data likely covers up to ~3.7
 
 Compare the user's chosen version against these baselines:
 

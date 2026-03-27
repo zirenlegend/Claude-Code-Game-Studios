@@ -3,13 +3,13 @@
   <p align="center">
     Turn a single Claude Code session into a full game development studio.
     <br />
-    48 agents. 37 workflows. One coordinated AI team.
+    54 agents. 37 workflows. One coordinated AI team.
   </p>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-  <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-48-blueviolet" alt="48 Agents"></a>
+  <a href=".claude/agents"><img src="https://img.shields.io/badge/agents-54-blueviolet" alt="54 Agents"></a>
   <a href=".claude/skills"><img src="https://img.shields.io/badge/skills-37-green" alt="37 Skills"></a>
   <a href=".claude/hooks"><img src="https://img.shields.io/badge/hooks-8-orange" alt="8 Hooks"></a>
   <a href=".claude/rules"><img src="https://img.shields.io/badge/rules-11-red" alt="11 Rules"></a>
@@ -50,7 +50,7 @@ The result: you still make every decision, but now you have a team that asks the
 
 | Category | Count | Description |
 |----------|-------|-------------|
-| **Agents** | 48 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |
+| **Agents** | 54 | Specialized subagents across design, programming, art, audio, narrative, QA, and production |
 | **Skills** | 37 | Slash commands for common workflows (`/start`, `/sprint-plan`, `/code-review`, `/brainstorm`, etc.) |
 | **Hooks** | 8 | Automated validation on commits, pushes, asset changes, session lifecycle, agent audit, and gap detection |
 | **Rules** | 11 | Path-scoped coding standards enforced when editing gameplay, engine, AI, UI, network code, and more |
@@ -82,13 +82,14 @@ Tier 3 — Specialists (Sonnet/Haiku)
 
 ### Engine Specialists
 
-The template includes agent sets for all three major engines. Use the set that matches your project:
+The template includes agent sets for all four major engines. Use the set that matches your project:
 
 | Engine | Lead Agent | Sub-Specialists |
 |--------|-----------|-----------------|
 | **Godot 4** | `godot-specialist` | GDScript, Shaders, GDExtension |
 | **Unity** | `unity-specialist` | DOTS/ECS, Shaders/VFX, Addressables, UI Toolkit |
 | **Unreal Engine 5** | `unreal-specialist` | GAS, Blueprints, Replication, UMG/CommonUI |
+| **Cocos Creator 3.x** | `cocos-specialist` | TypeScript, Shaders, UI, Native Extension, Asset Management |
 
 ## Slash Commands
 
